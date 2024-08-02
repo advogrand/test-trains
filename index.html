@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project name</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.title__text span {
+    color: rgba(241, 255, 86, 1);
+    display: flex;
+}
+.banner-con{
+    width: 100%;
+    overflow: hidden;
+}
+.banner-map {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(113.8deg, #3A1C52 -6.51%, #1F1D2B 96.43%);
+    color: white;    
+    height: 100vh;
+}
+.wrapper__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.header__info {
+    background: rgb(255 255 255 / 3%);
+    height: 90vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: 50px;
+    border-radius: 20px;
+    width: 90%;
+}
+.info__title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: clamp(27px, 2.5rem,90px);    
+    text-transform: uppercase;
+    text-wrap: balance;
+    max-width: 968px;
+    width: 100%;
+    margin-left: 50px;
+}
+
+.title__logo {
+   
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+
+}
+.title__logo h2{
+    margin-right: 20px;
+}
+.title__logo  .logo{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+.title__logo  .logo:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 50px;
+    height: 100px;
+    background-color: #fff;
+    filter: blur(30px);
+    transform: skewX(30deg) translateZ(0);
+    transition: 1s;
+    animation-name: slideme;
+    animation-duration: 4s;
+    animation-delay: 0.05s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes slideme {
+    0% {
+        left: -30px;
+        margin-left: 0px;
+    }
+    30% {
+        left: 65%;
+        margin-left: 60px;
+    }
+    100% {
+        left: 65%;
+        margin-left: 60px;
+    }
+}
+.logo {
+    max-width: 173px;
+}
+.title__logo img {
+   
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+.title__descript {
+    width: 100%;
+    margin-top: 30px;
+    text-transform: none;
+    font-size: clamp(13px, 4vh,40px);
+    position: relative;
+}
+.title__descript p {        
+    padding-bottom: 10px;     
+    font-size: 70%;   
+    width: 50%;
+}
+.title__descript::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 48%;
+    height: 2px;
+    border-bottom: 4px solid;
+    border-image-source: linear-gradient(90deg, #B15BFF 0%, rgba(177, 91, 255, 0) 100%);
+    border-image-slice: 1;
+    z-index: -1;
+    animation: gradient-animation 6s ease-in-out infinite ;
+}
+
+.detail__map img {
+    position: absolute;
+}
+
+.title__text {
+    width: 100%;
+}
+.header__map  img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;    
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.map__points img {
+    width: 60px;
+}
+.point__start {
+    position: relative;
+    z-index: 3;
+}
+.point__start img {    
+    position: absolute;
+    right: 17.5rem;
+    top: -17rem;
+}
+.point__end {
+    position: relative;
+    z-index: 3;
+}
+.point__end img {    
+    position: absolute;
+    right: 3.5rem;
+    top: 16.5rem;
+}
+.start__message .message__icon {
+    position: relative;
+    top: -21rem;
+    right: 1rem;
+}
+.end__message .message__icon {
+    position: relative;
+    top: -15rem;
+    left: 1.5rem;
+}
+.end__message .message__icon img {
+    top: 31rem;
+    right: 7.5rem;    
+}
+.end__message .message__icon .message__text img {
+    right: 11.7rem;
+    top: 31.1rem;
+}
+.end__message .message__icon .message__text p {
+    position: absolute;
+    top: 31.4rem;
+    right: 8rem;
+}
+.message__icon img {
+    position: absolute;
+    top: 3rem;
+    right: 10.5rem;
+    width: 100px;
+}
+.message__text {
+    position: relative;
+}
+.message__text img {
+    position: relative;
+    width: 25px;
+    right: 14.5rem;
+    top: 3.1rem;
+}
+.message__text p {
+    position: absolute;
+    top: 3.4rem;
+    right: 11.2rem;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+.hangars {
+    position: relative;    
+}
+.hangar__start img{
+    position: absolute;
+    top: -19.3rem;
+    z-index: 10;
+   
+    right: 12.9rem;
+    width: 100px;
+}
+.hangar__end-img {   
+    width: 170px;
+    position: absolute;
+    bottom: -24rem;
+    right: -5.3rem;
+    z-index: 10;
+}
+
+.start__detail img {
+    width: 16px;
+    position: absolute;
+    top: -12.8rem;
+    right: 13.4rem;
+    z-index: 3;
+}
+.road {
+    position: relative;
+    z-index: 3;
+}
+.road img {
+    position: absolute;
+    top: -17rem;
+    bottom: 0;
+    right: -16rem;
+}
+.train {
+    position: relative;
+    z-index: 3;        
+ 
+}
+.train img {    
+    position: absolute;
+    top: -18.4rem;
+    right: 12.7rem;
+    width: 100px;
+    animation: trainMovement ease-in 6s infinite;    
+}
+.banner-map-mobile {
+    display: none;
+}
+
+@keyframes trainMovement {
+    0% {
+        top: -18.4rem;
+        right: 12.7rem;
+        box-shadow: 0
+    }    
+   70% {
+    filter: drop-shadow(0 0 7px #EA96FF);
+    } 
+    100% {
+        top: 16.4rem;
+        filter: drop-shadow(0 0 7px #EA96FF);
+        right: -3.2rem;
+    }
+}
+@keyframes gradient-animation {
+    0% {
+        border-image-source: linear-gradient(90deg, #B15BFF 0%, rgba(177, 91, 255, 0) 100%);
+    }
+    50% {
+        border-image-source: linear-gradient(90deg, rgba(177, 91, 255, 0) 0%, #B15BFF 100%);
+    }
+    100% {
+        border-image-source: linear-gradient(90deg, #B15BFF 0%, rgba(177, 91, 255, 0) 100%);
+    }
+}
+@media screen and (max-width: 1200px) {
+    .header__map  img {
+        max-width: 450px;
+    }
+    
+
+}
+@media (max-width: 1111px) {
+    .info__title {
+        font-size: 32px;
+    }
+    .title__logo .logo {
+        max-width: 135px;
+    }
+    .title__descript p {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 985px) {
+    .info__title {
+        font-size: 26px;
+    }
+    .title__descript p {
+        font-size: 60%;
+    }
+    .title__descript::after {
+        width: 40.5%;
+    }        
+}
+@media (max-width: 860px) {
+    .banner-map{
+        display: none;
+    }
+    .banner-map-mobile{
+        width: 100%;
+        position: relative;
+        display: flex;
+        background: linear-gradient(113.8deg, #3A1C52 -6.51%, #1F1D2B 96.43%);
+        color: white;    
+        height: 640px;
+    }
+    .wrapper__header2  {
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 640px;
+        flex-direction: column;
+    }
+    .header__map2 img {
+        object-fit: fill;    
+        height: 555px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0%;
+        width: 100%;
+        max-width: 100%;
+    }
+    .header__info2 {
+        background: rgb(255 255 255 / 3%);
+    height: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: 50px;
+    border-radius: 20px;
+    width: 90%;
+       
+        align-items: normal;
+        padding-top: 40px;
+      
+    }
+    .title__text2 span {
+        color: rgba(241, 255, 86, 1);
+
+    }
+    .info__title2 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-size: 25px;    
+        text-transform: uppercase;
+        margin-left: 17px;
+        max-width: 300px;
+        width: 100%;
+
+    }
+    .info__title2 h2{
+        font-size: 27px;
+    }
+    .title__logo2 {
+       
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+    
+    }
+    .title__logo2 h2{
+        margin-right: 15px;
+    }
+    .title__logo2  .logo2{
+        position: relative;
+        overflow: hidden;
+        border-radius: 50px;
+    }
+    .title__logo2  .logo2:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -200px;
+        width: 50px;
+        height: 100px;
+        background-color: #fff;
+        filter: blur(30px);
+        transform: skewX(30deg) translateZ(0);
+        transition: 1s;
+        animation-name: slideme2;
+        animation-duration: 4s;
+        animation-delay: 0.05s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+    }
+    @keyframes slideme2 {
+        0% {
+            left: -30px;
+            margin-left: 0px;
+        }
+        30% {
+            left: 65%;
+            margin-left: 40px;
+        }
+        100% {
+            left: 65%;
+            margin-left: 40px;
+        }
+    }
+    .title__logo2 .logo2 {
+        max-width: 75px;
+    }
+    .title__logo2 .logo2 img{
+        width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .title__descript2{
+        margin-top: 20px;
+        text-transform: none;
+    }
+    .title__descript2::after {
+        width: 48.8%;
+    }     
+    .title__descript2 {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 13px;
+        position: relative;
+    }
+    .title__descript p {        
+        padding-bottom: 10px;       
+    }
+    .title__descript2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width:  90%;
+        height: 1px;
+        border-bottom: 2px solid;
+        border-image-source: linear-gradient(90deg, #B15BFF 0%, rgba(177, 91, 255, 0) 100%);
+        border-image-slice: 1;
+        z-index: -1;
+    }
+    
+ 
+    .header__info2 {
+        margin: 30px;
+        padding: 40px 0;
+    }
+   .point__start2{
+position: absolute;
+left: 50px;
+top: 265px;
+   }
+   .point__end2{
+    position: absolute;
+    left: 134px;
+    top: 558px;
+   }
+   .hangars2 {
+    position: relative;    
+}
+.hangar__start2 img{
+    position: absolute;
+    top: -350px;
+    z-index: 10;
+   
+    right: 50px;
+    width: 66px;
+}
+.hangar__end-img2 {   
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: -135px;
+    z-index: 10;
+}
+
+.start__detail2 img {
+    width: 16px;
+    position: absolute;
+    top: -297px;
+    right: 50px;
+    z-index: 3;
+}
+.road2 {
+    position: relative;
+    z-index: 3;
+}
+.road2 img {
+    position: absolute;
+    top: -360px;
+    bottom: 0;
+    right: -192px;  
+}
+.train2 {
+    position: relative;
+    z-index: 3;        
+ 
+}
+.train2 img {    
+    position: absolute;
+        top: -350px;
+        right: 50px;
+        width: 65px;
+    animation: trainMovement2 ease-in 6s infinite;    
+}
+@keyframes trainMovement2 {
+    0% {
+        top: -350px;
+        right: 49px;
+        box-shadow: 0;
+    }    
+   70% {
+    filter: drop-shadow(0 0 3px #EA96FF);
+    } 
+    100% {
+        top: -70px;
+        right: -127px;
+        filter: drop-shadow(0 0 3px #EA96FF);
+    }
+}
+}
+@media (max-width: 340px) {
+    .info__title2 h2 {
+        font-size: 24px;
+    }
+    .info__title2 {
+        max-width: 280px;
+    }  
+    .title__descript2{
+        font-size: 12px;
+    }
+      
+}
+@media (min-width: 420px) {
+    .point__start2{
+        position: absolute;
+        left: 90px;
+           }
+           .point__end2{
+            left: 175px;
+           }
+           
+      
+}
+@media (min-width: 480px) {
+    .point__start2{
+        position: absolute;
+        left: 120px;
+           }
+           .point__end2{
+            left: 210px;
+           }
+           
+      
+}
+@media (min-width: 520px) {
+    .point__start2{
+        position: absolute;
+        left: 140px;
+           }
+           .point__end2{
+            left: 240px;
+           }
+           
+      
+}
+@media (min-width: 560px) {
+    .header__map2 img{
+max-width: 115%;
+width: 115%;
+left: auto;
+    }
+    .info__title2{
+        margin-left: 30px;
+        max-width: 320px;
+    }
+    .info__title2 h2{
+        font-size: 30px;
+    }
+
+           
+      
+}
+@media (min-width: 600px) {
+    .header__map2 img{
+        max-width: 170%;
+        width: 170%;
+        left: -40%;
+        height: 535px;
+    }
+           
+      
+}
+@media (min-width: 650px) {
+    .point__start2{
+        left: 180px;
+        top: 275px;
+
+           }
+           .point__end2{
+            left: 280px;
+           }
+           
+      
+}
+@media (min-width: 700px) {
+    .header__map2 img{
+        max-width: 165%;
+        width: 165%;
+        bottom: -4%;
+        left: -39%;
+        height: 605px;
+    }
+           
+      
+}
+@media (min-width: 768px) {
+    .point__start2{
+        left: 220px;
+        top: 275px;
+
+           }
+           .point__end2{
+            left: 320px;
+            top: 580px;
+           }
+           .info__title2{
+            max-width: 500px;
+           }
+      
+}
+    </style>
+    
+</head>
+<body>
+    <div class="banner-con">
+    <div class="banner-map">
+        <header class="wrapper__header">
+            <div class="header__info">
+                <div class="info__title">
+                    <div class="title__logo">
+                        <h2>Доставка</h2>
+                        <div class="logo">
+                            <img src="./images/logo.svg" alt="logo">
+                        </div>                        
+                    </div>
+                    <div class="title__text">
+                        <h2>со склада Мурома <span>в Уральск</span></h2>
+                    </div>
+                    <div class="title__descript">
+                        <p>ЖД материалы и вагонные запчасти</p>
+                        <div class="border"></div>
+                    </div>
+                </div>                                
+            </div>     
+            <div class="position__materials">
+                <div class="header__map">                                 
+                    <img class="computer__map" src="./images/maps_icon.svg" alt="">                                          
+                </div>              
+                <div class="map__points">
+                    <div class="point__start">
+                        <div class="start__message">                        
+                            <div class="message__icon">
+                                <img src="./images/message_icon.svg" alt="">
+                                <div class="message__text">
+                                    <div class="text__icon">
+                                        <img src="./images/city_icon.svg" alt="">
+                                    </div>
+                                    <p>Муром</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="./images/point_icon.svg" alt="">
+                    </div>
+                    <div class="point__end">
+                        <div class="end__message">                        
+                            <div class="message__icon">
+                                <img src="./images/message_end.svg" alt="">
+                                <div class="message__text">
+                                    <div class="text__icon">
+                                        <img src="./images/city_icon.svg" alt="">
+                                    </div>
+                                    <p>Уральск</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="./images/point_icon.svg" alt="">
+                    </div>
+                </div>
+                <div class="hangars">
+                    <div class="hangar__start">
+                        <img class="hangar__start-img" src="./images/ambar-start_icon.png" alt="">
+                        <div class="start__detail">
+                            <img src="./images/detail_ambar.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hangar__end">
+                        <img class="hangar__end-img" src="./images/ambar_icon.svg" alt="">
+                    </div>
+                </div>
+                <div class="road">
+                    <img src="./images/relse_icon.svg" alt="">
+                </div>
+                <div class="train">
+                    <img src="./images/poezd_icon.svg" alt="">
+                </div>
+            </div>         
+        </header>
+    </div>
+    <div class="banner-map-mobile">
+        <header class="wrapper__header2">
+            <div class="header__info2">
+                <div class="info__title2">
+                    <div class="title__logo2">
+                        <h2>Доставка</h2>
+                        <div class="logo2">
+                            <img src="./images/logo.svg" alt="logo">
+                        </div>                        
+                    </div>
+                    <div class="title__text2">
+                        <h2>со склада Мурома <span>в Уральск</span></h2>
+                    </div>
+                    <div class="title__descript2">
+                        <p>ЖД материалы и вагонные запчасти</p>
+                        <div class="border2"></div>
+                    </div>
+                </div>                                
+            </div>     
+            <div class="position__materials2">
+                <div class="header__map2">                                 
+                    <img class="mobile_map" src="./images/mobail__map.svg" alt="">                                          
+                </div>              
+
+                    <div class="point__start2">
+                        <img src="./images/mobile-point1.svg" alt="">
+                    </div>
+                    <div class="point__end2">
+                        <img src="./images/mobile-point2.svg" alt="">
+                    </div>
+        
+                <div class="hangars2">
+                    <div class="hangar__start2">
+                        <img class="hangar__start-img" src="./images/ambar-start_icon2.png" alt="">
+                        <div class="start__detail2">
+                            <img src="./images/detail_ambar2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hangar__end2">
+                        <img class="hangar__end-img2" src="./images/ambar_icon2.svg" alt="">
+                    </div>
+                </div>
+                <div class="road2">
+                    <img src="./images/relse_icon2.svg" alt="">
+                </div>
+                <div class="train2">
+                    <img src="./images/poezd_icon2.svg" alt="">
+                </div>
+            </div>         
+        </header>
+    </div>
+</div>
+</body>
+</html>

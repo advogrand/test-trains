@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: /
+
+
+Sitemap: http://project10946547.tilda.ws/sitemap.xml
+Host: project10946547.tilda.ws
